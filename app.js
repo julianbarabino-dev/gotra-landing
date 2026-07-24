@@ -127,4 +127,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         </style>
     `);
+
+    // --- 5. Show/Hide Header on Scroll ---
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector('.main-header');
+    
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        
+        // Don't trigger hide if menu is open
+        if (mainNav && mainNav.classList.contains('active')) {
+            return;
+        }
+
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            // Scrolling down - hide header
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling up - show header
+            header.style.transform = 'translateY(0)';
+        }
+        lastScrollY = currentScrollY;
+    });
 });
