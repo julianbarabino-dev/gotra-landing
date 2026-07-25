@@ -849,3 +849,21 @@ img {
         color: var(--primary);
     }
 }
+
+/* --- Footer Record Label Logo --- */
+.label-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.label-logo-img {
+    max-height: 70px;
+    width: auto;
+    opacity: 0.65; /* Semitransparente para integrarse con el fondo */
+    transition: var(--transition-smooth);
+}
+
+.label-logo-img:hover {
+    opacity: 1; /* Iluminar al 100% al pasar el cursor */
+}

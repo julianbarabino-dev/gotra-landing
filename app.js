@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // --- 1. Mobile Menu Toggle ---
     const btnMenuToggle = document.getElementById('btn-menu-toggle');
     const mainNav = document.getElementById('main-nav');
-    
+
     if (btnMenuToggle && mainNav) {
         btnMenuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.add('fa-bars');
             }
         });
-        
+
         // Close menu when clicking a link
         const navLinks = mainNav.querySelectorAll('a');
         navLinks.forEach(link => {
@@ -32,16 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 2. Countdown Timer ---
     // Target date: July 31, 2026 at 00:00:00 (Local time or UTC, let's make it local)
     const targetDate = new Date('2026-07-31T00:00:00').getTime();
-    
+
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
     const minutesEl = document.getElementById('minutes');
     const secondsEl = document.getElementById('seconds');
-    
+
     function updateCountdown() {
         const now = new Date().getTime();
         const difference = targetDate - now;
-        
+
         if (difference <= 0) {
             // Reached release date
             const countdownWidget = document.getElementById('countdown-widget');
@@ -53,20 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return;
         }
-        
+
         // Calculations
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        
+
         // Render
         if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
         if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
         if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
         if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
     }
-    
+
     // Run countdown immediately and then every second
     updateCountdown();
     setInterval(updateCountdown, 1000);
@@ -74,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. Scroll Active Link Highlight & Fade-in Animations ---
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-menu a');
-    
+
     window.addEventListener('scroll', () => {
         let current = '';
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 current = section.getAttribute('id');
             }
         });
-        
+
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
@@ -131,10 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 5. Show/Hide Header on Scroll ---
     let lastScrollY = window.scrollY;
     const header = document.querySelector('.main-header');
-    
+
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
-        
+
         // Don't trigger hide if menu is open
         if (mainNav && mainNav.classList.contains('active')) {
             return;
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         'Accept': 'application/json'
                     }
                 });
-                
+
                 if (response.ok) {
                     // Reemplazar el formulario por un mensaje de éxito estético
                     contactForm.style.transition = 'opacity 0.3s ease';
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <i class="fa-solid fa-circle-check" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px; text-shadow: 0 0 15px var(--primary-glow);"></i>
                                 <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; color: var(--text-main);">¡Mensaje Recibido!</h3>
                                 <p style="font-family: var(--font-body); color: var(--text-muted); line-height: 1.6; font-size: 0.95rem;">
-                                    Tu mensaje ha sido enviado a través del Oráculo. Nos pondremos en contacto a la brevedad.
+                                    Recibimos tu mensaje. Te contactaremos a la brevedad.
                                 </p>
                             </div>
                         `;
