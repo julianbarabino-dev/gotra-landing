@@ -149,4 +149,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         lastScrollY = currentScrollY;
     });
+
+    // --- 6. Formspree AJAX Contact Form Handling ---
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector('#btn-submit-contact');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+
+            const data = new FormData(contactForm);
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Reemplazar el formulario por un mensaje de éxito estético
+                    contactForm.style.transition = 'opacity 0.3s ease';
+                    contactForm.style.opacity = '0';
+                    setTimeout(() => {
+                        contactForm.innerHTML = `
+                            <div class="form-success-message" style="text-align: center; padding: 40px 20px; animation: fadeIn 0.8s ease forwards;">
+                                <i class="fa-solid fa-circle-check" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px; text-shadow: 0 0 15px var(--primary-glow);"></i>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; color: var(--text-main);">¡Mensaje Recibido!</h3>
+                                <p style="font-family: var(--font-body); color: var(--text-muted); line-height: 1.6; font-size: 0.95rem;">
+                                    Tu mensaje ha sido enviado a través del Oráculo. Nos pondremos en contacto a la brevedad.
+                                </p>
+                            </div>
+                        `;
+                        contactForm.style.opacity = '1';
+                    }, 300);
+                } else {
+                    const responseData = await response.json();
+                    throw new Error(responseData.error || 'Error al procesar el mensaje.');
+                }
+            } catch (error) {
+                alert('Ocurrió un error al enviar el mensaje: ' + error.message);
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
 });
