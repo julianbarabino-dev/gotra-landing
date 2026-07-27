@@ -867,3 +867,95 @@ img {
 .label-logo-img:hover {
     opacity: 1; /* Iluminar al 100% al pasar el cursor */
 }
+
+/* --- Disabled Hero Button --- */
+.btn-disabled,
+.btn-disabled:hover {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+    pointer-events: none;
+}
+
+/* --- Release Card Widget (Centrada) --- */
+.release-card {
+    background: rgba(10, 5, 20, 0.4);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    margin-top: 30px;
+    text-align: center; /* Centra el texto */
+    max-width: 450px;
+    margin-left: auto; /* Centra la ficha dentro de la columna */
+    margin-right: auto;
+}
+
+.release-card-header {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el título y el candado */
+    gap: 10px;
+    letter-spacing: 1px;
+}
+
+.release-card-text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.release-platforms {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los logos de las plataformas */
+}
+
+.platform-item {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-main);
+    opacity: 0.55;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.platform-item i {
+    font-size: 1.2rem;
+}
+
+.platform-item.spotify i { color: #1DB954; }
+.platform-item.youtube i { color: #FF0000; }
+.platform-item.bandcamp i { color: #629aa9; }
+
+/* --- Botón Instagram de Bajo Perfil --- */
+.btn-instagram {
+    background: #050505;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    margin-top: 20px;
+    width: 100%;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-instagram:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--primary-glow);
+}
