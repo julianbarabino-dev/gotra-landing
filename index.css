@@ -615,13 +615,37 @@ img {
 
 /* --- Footer (Exact Layout matching screenshot) --- */
 .main-footer {
+    position: relative;
+    overflow: hidden;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 30px 20px;
+    padding: 40px 20px;
     background: #030303;
     font-family: var(--font-body);
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.4);
     letter-spacing: 0.5px;
+}
+
+.footer-monk-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background-image: url('assets/CVR-monk.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.08; /* Transparencia muy sutil del 8% */
+    pointer-events: none;
+    z-index: 0;
+}
+
+.footer-content, 
+.label-logo-container {
+    position: relative;
+    z-index: 1;
 }
 
 .footer-content {
@@ -800,8 +824,14 @@ img {
     }
 }
 
-/* --- Mobile Menu Footer --- */
+/* --- Mobile Menu Footer & Socials (Desktop hidden) --- */
 .mobile-nav-footer {
+    display: none;
+}
+.menu-monk-bg {
+    display: none;
+}
+.mob-socials {
     display: none;
 }
 
@@ -811,6 +841,30 @@ img {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+    }
+
+    /* Marca de agua del Monje en el Menú Móvil (Ocupa todo el fondo) */
+    .menu-monk-bg {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('assets/CVR-monk.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.03; /* Reducido a 3% porque al ser más grande resalta más */
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .nav-menu ul,
+    .mob-socials,
+    .mobile-nav-footer {
+        position: relative;
+        z-index: 1; /* Por encima del monje */
     }
 
     .mobile-nav-footer {
@@ -836,7 +890,9 @@ img {
     }
 
     .mob-socials {
-        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
     }
 
     .mob-socials a {
@@ -858,7 +914,7 @@ img {
 }
 
 .label-logo-img {
-    max-height: 70px;
+    max-height: 110px;
     width: auto;
     opacity: 0.65; /* Semitransparente para integrarse con el fondo */
     transition: var(--transition-smooth);
