@@ -1073,3 +1073,245 @@ img {
         text-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
     }
 }
+
+/* --- Sección Prensa (EPK Fichas & Carrusel) --- */
+.press-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Grilla para sección oculta (Dossier) */
+.press-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .press-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Estilos de Carrusel Moderno Snap Scroll (como Jules) */
+.press-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.press-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 24px;
+    padding: 20px 10px;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+}
+
+.press-carousel::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.press-card {
+    background: rgba(10, 5, 20, 0.3);
+    border: 1px solid rgba(168, 85, 247, 0.12);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+.press-card.snap-item {
+    scroll-snap-align: center;
+    flex: 0 0 85vw; /* 85% de la pantalla en móviles */
+}
+
+@media (min-width: 768px) {
+    .press-card.snap-item {
+        flex: 0 0 450px; /* Ancho fijo en desktop */
+        scroll-snap-align: start;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Si las fichas entran completas en la pantalla, las centramos */
+    .press-carousel {
+        justify-content: center;
+    }
+}
+
+.press-card:hover {
+    border-color: rgba(168, 85, 247, 0.55);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.25);
+    transform: translateY(-5px);
+}
+
+/* Controles del Carrusel (Flechas chevrons flotantes) */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(10, 5, 20, 0.75);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    color: var(--text-main);
+    display: none; /* Ocultar por defecto en mobile */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-control i {
+    font-size: 1rem;
+}
+
+@media (min-width: 1160px) {
+    .carousel-control {
+        display: flex; /* Mostrar en PC con suficiente espacio lateral */
+    }
+    .carousel-control.prev {
+        left: -60px;
+    }
+    .carousel-control.next {
+        right: -60px;
+    }
+}
+
+.carousel-control:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #000;
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.press-card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #030105;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+}
+
+.press-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.65;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s ease;
+}
+
+.press-card-image.logo-preview-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.press-card-image.logo-preview-container img {
+    max-height: 80%;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.15));
+}
+
+.press-card:hover .press-card-image img {
+    transform: scale(1.04);
+    opacity: 0.85;
+}
+
+.press-card-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: rgba(8, 3, 15, 0.85);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: var(--secondary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+.press-card-content {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.press-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: bold;
+    font-style: italic;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.press-card-desc {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Botón estilo Terminal / Consola */
+.btn-press {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 11px 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.press-card:hover .btn-press {
+    background: rgba(168, 85, 247, 0.08);
+    border-color: rgba(168, 85, 247, 0.35);
+    color: var(--primary);
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.15);
+}

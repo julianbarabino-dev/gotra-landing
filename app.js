@@ -224,4 +224,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- 7. Press Carousel Navigation ---
+    const pressCarousel = document.getElementById('press-carousel');
+    const btnPressPrev = document.getElementById('btn-press-prev');
+    const btnPressNext = document.getElementById('btn-press-next');
+
+    if (pressCarousel && btnPressPrev && btnPressNext) {
+        const scrollAmount = 474; // 450px de ancho de ficha + 24px de gap
+        btnPressPrev.addEventListener('click', () => {
+            pressCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        btnPressNext.addEventListener('click', () => {
+            pressCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
 });

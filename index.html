@@ -107,6 +107,7 @@
                     <li><a href="#inicio" id="link-inicio">Home</a></li>
                     <li><a href="#single" id="link-single">Music</a></li>
                     <li><a href="#concepto" id="link-concepto">Concept</a></li>
+                    <li><a href="#prensa" id="link-prensa">Press</a></li>
                     <li><a href="#contacto" id="link-contacto">Contact</a></li>
                 </ul>
 
@@ -243,6 +244,137 @@
             <div class="diamond-icon">✦</div>
             <div class="diamond-line"></div>
         </div>
+
+        <!-- Press Section (Reseñas & Notas en Carrusel) -->
+        <section id="prensa" class="section press-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Prensa</h2>
+                    <p class="section-subtitle">Reseñas & Cobertura de Medios</p>
+                </div>
+
+                <div class="press-carousel-wrapper">
+                    <button class="carousel-control prev" id="btn-press-prev" aria-label="Anterior">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="press-carousel" id="press-carousel">
+                        <!-- Ficha 1: Metal Argentum -->
+                        <div class="press-card snap-item">
+                            <div class="press-card-image">
+                                <img src="assets/img_6014.jpg" alt="Nota Metal Argentum Radio">
+                                <span class="press-card-tag">Noticias</span>
+                            </div>
+                            <div class="press-card-content">
+                                <h3 class="press-card-title">Metal Argentum</h3>
+                                <p class="press-card-desc">«Julián Barabino oficializó GOTRA, su nueva propuesta que fusiona la densidad del doom, el rock psicodélico de los setenta y una fuerte impronta esotérica.»</p>
+                                <a href="https://www.metalargentumradio.com.ar/noticias/julian-barabino-presenta-gotra-nuevo-proyecto/" target="_blank" class="btn-press">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Leer Artículo
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Ficha 2: Delta 80 -->
+                        <div class="press-card snap-item">
+                            <div class="press-card-image">
+                                <img src="assets/img_5976_byn.jpg" alt="Nota Delta 80">
+                                <span class="press-card-tag">Reseña</span>
+                            </div>
+                            <div class="press-card-content">
+                                <h3 class="press-card-title">Delta 80</h3>
+                                <p class="press-card-desc">«Gotra: doom, psicodelia y esoterismo para atravesar la muerte y volver a despertar. Un nuevo proyecto que cruza la densidad del doom con la psicodelia de los años 70.»</p>
+                                <a href="https://www.delta80.com.ar/gotra-doom-psicodelia-y-esoterismo-para-atravesar-la-muerte-y-volver-a-despertar/" target="_blank" class="btn-press">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Leer Artículo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control next" id="btn-press-next" aria-label="Siguiente">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diamond Separator 4 -->
+        <div class="diamond-separator">
+            <div class="diamond-line"></div>
+            <div class="diamond-icon">✦</div>
+            <div class="diamond-line"></div>
+        </div>
+
+        <!-- EPK Downloads Section (Oculta temporalmente para reorganizar después) -->
+        <section id="epk-descargas" class="section press-section hidden">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Prensa / Descargas</h2>
+                    <p class="section-subtitle">Material de Difusión & EPK Oficial</p>
+                </div>
+
+                <div class="press-grid">
+                    <!-- Ficha 1: Gacetilla -->
+                    <div class="press-card">
+                        <div class="press-card-image">
+                            <img src="assets/artwork.jpg" alt="Muerto Al Fin - Portada">
+                            <span class="press-card-tag">Gacetilla</span>
+                        </div>
+                        <div class="press-card-content">
+                            <h3 class="press-card-title">Gacetilla de Prensa</h3>
+                            <p class="press-card-desc">Información oficial sobre el lanzamiento del single debut «Muerto Al Fin», créditos de producción y biografía del proyecto.</p>
+                            <a href="assets/press/GACETILLA_GOTRA.docx" class="btn-press" download>
+                                <i class="fa-solid fa-download"></i> Descargar DOCX
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Ficha 2: Fotos Oficiales -->
+                    <div class="press-card">
+                        <div class="press-card-image">
+                            <img src="assets/img_6014.jpg" alt="GOTRA Fotos de Prensa">
+                            <span class="press-card-tag">Imágenes</span>
+                        </div>
+                        <div class="press-card-content">
+                            <h3 class="press-card-title">Fotos Oficiales</h3>
+                            <p class="press-card-desc">Retratos de banda y material fotográfico oficial en alta resolución comprimidos en formato ZIP para difusión en medios.</p>
+                            <a href="assets/press/GOTRA_Fotos_Prensa.zip" class="btn-press" download>
+                                <i class="fa-solid fa-file-zipper"></i> Descargar ZIP (15MB)
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Ficha 3: Dossier / Info -->
+                    <div class="press-card">
+                        <div class="press-card-image">
+                            <img src="assets/img_5976_byn.jpg" alt="GOTRA Información">
+                            <span class="press-card-tag">Dossier</span>
+                        </div>
+                        <div class="press-card-content">
+                            <h3 class="press-card-title">Dossier / Bio</h3>
+                            <p class="press-card-desc">Ficha descriptiva completa en formato PDF con la biografía, el concepto artístico, géneros y links de contacto oficiales.</p>
+                            <a href="assets/press/GOTRA_Info_1.pdf" class="btn-press" target="_blank">
+                                <i class="fa-solid fa-file-pdf"></i> Ver PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Ficha 4: Kit de Logos -->
+                    <div class="press-card">
+                        <div class="press-card-image logo-preview-container">
+                            <img src="assets/logo.png" alt="GOTRA Logos" class="logo-preview">
+                            <span class="press-card-tag">Gráfica</span>
+                        </div>
+                        <div class="press-card-content">
+                            <h3 class="press-card-title">Logos Oficiales</h3>
+                            <p class="press-card-desc">Logotipos e isotipos oficiales de GOTRA en alta resolución con fondo transparente en formato PNG.</p>
+                            <a href="assets/press/gotra_logo_transparente.png" class="btn-press" download>
+                                <i class="fa-solid fa-download"></i> Descargar PNG
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Contact & Press Section -->
         <section id="contacto" class="section contact-section">
