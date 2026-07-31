@@ -30,27 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 2. Countdown Timer ---
-    // Target date: July 31, 2026 at 00:00:00 (Local time or UTC, let's make it local)
+    // Target date: July 31, 2026 at 00:00:00 (Local time)
     const targetDate = new Date('2026-07-31T00:00:00').getTime();
-
-    const daysEl = document.getElementById('days');
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
 
     function updateCountdown() {
         const now = new Date().getTime();
         const difference = targetDate - now;
 
+        const countdownWidget = document.getElementById('countdown-widget');
+        if (!countdownWidget) return;
+
         if (difference <= 0) {
-            // Reached release date
-            const countdownWidget = document.getElementById('countdown-widget');
-            if (countdownWidget) {
-                countdownWidget.innerHTML = `
-                    <h3 style="color: var(--secondary)">¡YA DISPONIBLE!</h3>
-                    <p class="release-date" style="font-size: 1.2rem; font-weight: 700;">Muerto Al Fin ha sido lanzado en todas las plataformas</p>
-                `;
-            }
+            // Reached release date - Show a subtle, clean text below the button
+            countdownWidget.innerHTML = `
+                <p class="release-notification-text">¡Ya disponible en plataformas digitales!</p>
+            `;
             return;
         }
 
@@ -60,7 +54,40 @@ document.addEventListener('DOMContentLoaded', () => {
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-        // Render
+        // If the countdown structure isn't rendered yet (because we removed it from static HTML), render it once
+        if (!document.getElementById('days')) {
+            countdownWidget.innerHTML = `
+                <div class="countdown-container">
+                    <h3>El final comienza en</h3>
+                    <div class="timer">
+                        <div class="time-block">
+                            <span class="time-num" id="days">00</span>
+                            <span class="time-label">Días</span>
+                        </div>
+                        <div class="time-block">
+                            <span class="time-num" id="hours">00</span>
+                            <span class="time-label">Horas</span>
+                        </div>
+                        <div class="time-block">
+                            <span class="time-num" id="minutes">00</span>
+                            <span class="time-label">Min</span>
+                        </div>
+                        <div class="time-block">
+                            <span class="time-num" id="seconds">00</span>
+                            <span class="time-label">Seg</span>
+                        </div>
+                    </div>
+                    <p class="release-date">31 de Julio de 2026</p>
+                </div>
+            `;
+        }
+
+        // Render values
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
         if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
         if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
         if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');

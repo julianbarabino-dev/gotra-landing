@@ -934,63 +934,93 @@ img {
     pointer-events: none;
 }
 
-/* --- Release Card Widget (Centrada) --- */
-.release-card {
-    background: rgba(10, 5, 20, 0.4);
-    border: 1px dashed rgba(255, 255, 255, 0.15);
-    padding: 25px;
-    margin-top: 30px;
-    text-align: center; /* Centra el texto */
+/* --- Spotify Embed Player Container --- */
+.spotify-embed-container {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    width: 100%;
     max-width: 450px;
-    margin-left: auto; /* Centra la ficha dentro de la columna */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* --- Streaming Platform Links --- */
+.streaming-platforms {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    max-width: 450px;
+    margin-left: auto;
     margin-right: auto;
 }
 
-.release-card-header {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    color: var(--primary);
-    font-weight: bold;
-    margin-bottom: 12px;
-    display: flex;
+.platform-link {
+    display: inline-flex;
     align-items: center;
-    justify-content: center; /* Centra el título y el candado */
-    gap: 10px;
-    letter-spacing: 1px;
-}
-
-.release-card-text {
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: var(--text-main);
     font-family: var(--font-body);
     font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    flex: 1 1 120px;
+    min-width: 120px;
+}
+
+.platform-link i {
+    font-size: 1.1rem;
+}
+
+.platform-link:hover:not(.disabled) {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.platform-link.spotify:hover {
+    border-color: #1DB954;
+    box-shadow: 0 0 15px rgba(29, 185, 84, 0.25);
+    color: #1DB954;
+}
+
+.platform-link.youtube:hover {
+    border-color: #FF0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.25);
+    color: #FF0000;
+}
+
+.platform-link.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.platform-link.disabled i {
+    color: #629aa9;
+}
+
+.badge-soon {
+    font-size: 0.65rem;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     color: var(--text-muted);
-    margin-bottom: 20px;
-    line-height: 1.5;
 }
-
-.release-platforms {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center; /* Centra los logos de las plataformas */
-}
-
-.platform-item {
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    color: var(--text-main);
-    opacity: 0.55;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.platform-item i {
-    font-size: 1.2rem;
-}
-
-.platform-item.spotify i { color: #1DB954; }
-.platform-item.youtube i { color: #FF0000; }
-.platform-item.bandcamp i { color: #629aa9; }
 
 /* --- Botón Instagram de Bajo Perfil --- */
 .btn-instagram {
@@ -1014,4 +1044,32 @@ img {
     color: var(--primary);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px var(--primary-glow);
+}
+
+/* --- Hero Active Release Subtle Text --- */
+.hero-release-info {
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.release-notification-text {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--secondary);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    letter-spacing: 1px;
+    margin: 0;
+    animation: pulse-glow 3s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 0.8;
+        text-shadow: 0 0 8px rgba(0, 255, 255, 0.15);
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    }
 }
