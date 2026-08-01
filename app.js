@@ -239,4 +239,44 @@ document.addEventListener('DOMContentLoaded', () => {
             pressCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         });
     }
+
+    // --- 8. Press Carousel Mobile Indicators ---
+    const carouselIndicators = document.getElementById('carousel-indicators');
+    if (carouselIndicators && pressCarousel) {
+        const dots = carouselIndicators.querySelectorAll('.indicator-dot');
+        
+        // Actualizar bullet activo en base al scroll del dedo
+        pressCarousel.addEventListener('scroll', () => {
+            const scrollLeft = pressCarousel.scrollLeft;
+            const card = pressCarousel.querySelector('.press-card');
+            if (!card) return;
+            const cardWidth = card.clientWidth;
+            const gap = 24;
+            const index = Math.round(scrollLeft / (cardWidth + gap));
+            
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        });
+
+        // Hacer scroll al clickear un bullet
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const slideIndex = parseInt(dot.getAttribute('data-slide'));
+                const card = pressCarousel.querySelector('.press-card');
+                if (!card) return;
+                const cardWidth = card.clientWidth;
+                const gap = 24;
+                
+                pressCarousel.scrollTo({
+                    left: slideIndex * (cardWidth + gap),
+                    behavior: 'smooth'
+                });
+            });
+        });
+    }
 });
