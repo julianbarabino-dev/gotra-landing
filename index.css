@@ -1279,15 +1279,37 @@ img {
     flex-grow: 1;
 }
 
+.press-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+    opacity: 0.85;
+}
+
+.press-card-meta i {
+    font-size: 0.7rem;
+    margin-right: 3px;
+}
+
 .press-card-title {
     font-family: var(--font-heading);
     font-size: 1.35rem;
     font-weight: bold;
     font-style: italic;
     color: var(--text-main);
-    margin-bottom: 12px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.press-card-title .title-accent {
+    color: var(--secondary);
 }
 
 .press-card-desc {
@@ -1328,19 +1350,13 @@ img {
     box-shadow: 0 0 12px rgba(168, 85, 247, 0.15);
 }
 
-/* --- Carousel Indicators / Bullets (Prensa Mobile) --- */
+/* --- Carousel Indicators / Bullets (Prensa) --- */
 .carousel-indicators {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 20px;
+    margin-top: 24px;
     width: 100%;
-}
-
-@media (min-width: 1024px) {
-    .carousel-indicators {
-        display: none; /* Ocultar en PC ya que las notas entran completas y centradas */
-    }
 }
 
 .indicator-dot {
