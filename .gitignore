@@ -1,0 +1,29 @@
+# Archivos de prensa / descargas pesadas
+assets/press/
+
+# Archivos del sistema operativo (Mac / Windows)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+thumbs.db
+
+# Variables de entorno y llaves de seguridad
+.env
+.env.local
+.env.*
+*.pem
+*.key
+
+# Editor & IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Módulos y compilados (por si en el futuro usas npm)
+node_modules/
+dist/
+build/
+*.log
