@@ -1162,14 +1162,8 @@ img {
     }
 }
 
-@media (min-width: 1024px) {
-    /* Si las fichas entran completas en la pantalla, las centramos */
-    .press-carousel {
-        justify-content: center;
-    }
-}
-
-.press-card:hover {
+.press-card:hover,
+.press-card.active {
     border-color: rgba(168, 85, 247, 0.55);
     box-shadow: 0 10px 30px rgba(168, 85, 247, 0.25);
     transform: translateY(-5px);

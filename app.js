@@ -225,57 +225,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 7. Press Carousel Navigation ---
+    // --- 7. & 8. Press Carousel Navigation & Active Card Sync ---
     const pressCarousel = document.getElementById('press-carousel');
     const btnPressPrev = document.getElementById('btn-press-prev');
     const btnPressNext = document.getElementById('btn-press-next');
-
-    if (pressCarousel && btnPressPrev && btnPressNext) {
-        const scrollAmount = 474; // 450px de ancho de ficha + 24px de gap
-        btnPressPrev.addEventListener('click', () => {
-            pressCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        });
-        btnPressNext.addEventListener('click', () => {
-            pressCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        });
-    }
-
-    // --- 8. Press Carousel Mobile Indicators ---
     const carouselIndicators = document.getElementById('carousel-indicators');
-    if (carouselIndicators && pressCarousel) {
-        const dots = carouselIndicators.querySelectorAll('.indicator-dot');
-        
-        // Actualizar bullet activo en base al scroll del dedo
+
+    if (pressCarousel) {
+        const cards = pressCarousel.querySelectorAll('.press-card');
+        const dots = carouselIndicators ? carouselIndicators.querySelectorAll('.indicator-dot') : [];
+
+        const updateActiveState = (index) => {
+            const targetIndex = Math.max(0, Math.min(index, cards.length - 1));
+            cards.forEach((card, i) => {
+                card.classList.toggle('active', i === targetIndex);
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === targetIndex);
+            });
+        };
+
+        // Sincronizar al hacer scroll (táctil, mouse wheel o botones)
+        let scrollTimeout;
         pressCarousel.addEventListener('scroll', () => {
+            if (!cards.length) return;
             const scrollLeft = pressCarousel.scrollLeft;
-            const card = pressCarousel.querySelector('.press-card');
-            if (!card) return;
-            const cardWidth = card.clientWidth;
+            const cardWidth = cards[0].clientWidth;
             const gap = 24;
             const index = Math.round(scrollLeft / (cardWidth + gap));
             
-            dots.forEach((dot, i) => {
-                if (i === index) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                updateActiveState(index);
+            }, 50);
         });
 
-        // Hacer scroll al clickear un bullet
-        dots.forEach(dot => {
+        // Controles flechas
+        if (btnPressPrev && btnPressNext) {
+            btnPressPrev.addEventListener('click', () => {
+                const cardWidth = cards[0] ? cards[0].clientWidth : 450;
+                pressCarousel.scrollBy({ left: -(cardWidth + 24), behavior: 'smooth' });
+            });
+            btnPressNext.addEventListener('click', () => {
+                const cardWidth = cards[0] ? cards[0].clientWidth : 450;
+                pressCarousel.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
+            });
+        }
+
+        // Clic en viñetas / bullets
+        dots.forEach((dot, i) => {
             dot.addEventListener('click', () => {
                 const slideIndex = parseInt(dot.getAttribute('data-slide'));
-                const card = pressCarousel.querySelector('.press-card');
-                if (!card) return;
-                const cardWidth = card.clientWidth;
+                const targetIdx = isNaN(slideIndex) ? i : slideIndex;
+                if (!cards.length) return;
+                const cardWidth = cards[0].clientWidth;
                 const gap = 24;
-                
+
                 pressCarousel.scrollTo({
-                    left: slideIndex * (cardWidth + gap),
+                    left: targetIdx * (cardWidth + gap),
                     behavior: 'smooth'
                 });
+                updateActiveState(targetIdx);
             });
         });
     }
