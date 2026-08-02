@@ -234,15 +234,33 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pressCarousel) {
         const cards = pressCarousel.querySelectorAll('.press-card');
         const dots = carouselIndicators ? carouselIndicators.querySelectorAll('.indicator-dot') : [];
+        const carouselCounter = document.getElementById('carousel-counter');
+        let currentIndex = 0;
 
         const updateActiveState = (index) => {
-            const targetIndex = Math.max(0, Math.min(index, cards.length - 1));
+            currentIndex = Math.max(0, Math.min(index, cards.length - 1));
             cards.forEach((card, i) => {
-                card.classList.toggle('active', i === targetIndex);
+                card.classList.toggle('active', i === currentIndex);
             });
             dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === targetIndex);
+                dot.classList.toggle('active', i === currentIndex);
             });
+            if (carouselCounter) {
+                carouselCounter.textContent = `${currentIndex + 1} / ${cards.length}`;
+            }
+        };
+
+        const goToCard = (index) => {
+            if (!cards.length) return;
+            const targetIndex = (index + cards.length) % cards.length;
+            const cardWidth = cards[0].clientWidth;
+            const gap = 24;
+
+            pressCarousel.scrollTo({
+                left: targetIndex * (cardWidth + gap),
+                behavior: 'smooth'
+            });
+            updateActiveState(targetIndex);
         };
 
         // Sincronizar al hacer scroll (táctil, mouse wheel o botones)
@@ -260,15 +278,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 50);
         });
 
-        // Controles flechas
+        // Controles flechas con bucle infinito
         if (btnPressPrev && btnPressNext) {
             btnPressPrev.addEventListener('click', () => {
-                const cardWidth = cards[0] ? cards[0].clientWidth : 450;
-                pressCarousel.scrollBy({ left: -(cardWidth + 24), behavior: 'smooth' });
+                goToCard(currentIndex - 1);
             });
             btnPressNext.addEventListener('click', () => {
-                const cardWidth = cards[0] ? cards[0].clientWidth : 450;
-                pressCarousel.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
+                goToCard(currentIndex + 1);
             });
         }
 
@@ -277,15 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dot.addEventListener('click', () => {
                 const slideIndex = parseInt(dot.getAttribute('data-slide'));
                 const targetIdx = isNaN(slideIndex) ? i : slideIndex;
-                if (!cards.length) return;
-                const cardWidth = cards[0].clientWidth;
-                const gap = 24;
-
-                pressCarousel.scrollTo({
-                    left: targetIdx * (cardWidth + gap),
-                    behavior: 'smooth'
-                });
-                updateActiveState(targetIdx);
+                goToCard(targetIdx);
             });
         });
     }

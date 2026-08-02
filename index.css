@@ -1244,7 +1244,8 @@ img {
     filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.15));
 }
 
-.press-card:hover .press-card-image img {
+.press-card:hover .press-card-image img,
+.press-card.active .press-card-image img {
     transform: scale(1.04);
     opacity: 0.85;
 }
@@ -1339,7 +1340,8 @@ img {
     cursor: pointer;
 }
 
-.press-card:hover .btn-press {
+.press-card:hover .btn-press,
+.press-card.active .btn-press {
     background: rgba(168, 85, 247, 0.08);
     border-color: rgba(168, 85, 247, 0.35);
     color: var(--primary);
@@ -1370,6 +1372,16 @@ img {
     width: 24px;
     background: var(--primary);
     box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.carousel-counter {
+    font-family: var(--font-typewriter);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 12px;
+    width: 100%;
 }
 
 /* Screen Reader Only Utility Class for Accessibility & SEO */
