@@ -297,4 +297,103 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- 5. i18n Internationalization Logic ---
+    const langBtns = document.querySelectorAll('.lang-btn');
+    let currentLang = localStorage.getItem('gotra_lang') || 'es';
+
+    function getNestedTranslation(obj, path) {
+        return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+    }
+
+    function applyLanguage(lang) {
+        if (typeof translations === 'undefined' || !translations[lang]) return;
+
+        currentLang = lang;
+        localStorage.setItem('gotra_lang', lang);
+
+        // Update html lang attribute
+        document.documentElement.lang = lang;
+
+        // Update active class on language toggle buttons
+        langBtns.forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // 1. Text translations (data-i18n)
+        const i18nElements = document.querySelectorAll('[data-i18n]');
+        i18nElements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            const text = getNestedTranslation(translations[lang], key);
+            if (text) {
+                el.textContent = text;
+            }
+        });
+
+        // 2. HTML content translations (data-i18n-html)
+        const i18nHtmlElements = document.querySelectorAll('[data-i18n-html]');
+        i18nHtmlElements.forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            const htmlContent = getNestedTranslation(translations[lang], key);
+            if (htmlContent) {
+                el.innerHTML = htmlContent;
+            }
+        });
+
+        // 3. Placeholder translations (data-i18n-placeholder)
+        const i18nPlaceholders = document.querySelectorAll('[data-i18n-placeholder]');
+        i18nPlaceholders.forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            const text = getNestedTranslation(translations[lang], key);
+            if (text) {
+                el.placeholder = text;
+            }
+        });
+
+        // 4. Aria-label translations (data-i18n-aria)
+        const i18nAria = document.querySelectorAll('[data-i18n-aria]');
+        i18nAria.forEach(el => {
+            const key = el.getAttribute('data-i18n-aria');
+            const text = getNestedTranslation(translations[lang], key);
+            if (text) {
+                el.setAttribute('aria-label', text);
+            }
+        });
+
+        // 5. Image Alt translations (data-i18n-alt)
+        const i18nAlt = document.querySelectorAll('[data-i18n-alt]');
+        i18nAlt.forEach(el => {
+            const key = el.getAttribute('data-i18n-alt');
+            const text = getNestedTranslation(translations[lang], key);
+            if (text) {
+                el.alt = text;
+            }
+        });
+
+        // Dynamic update of countdown notification if release date passed
+        const countdownWidget = document.getElementById('countdown-widget');
+        if (countdownWidget && countdownWidget.querySelector('.release-notification-text')) {
+            const notifText = getNestedTranslation(translations[lang], 'countdown.notification');
+            if (notifText) {
+                countdownWidget.querySelector('.release-notification-text').textContent = notifText;
+            }
+        }
+    }
+
+    // Attach click listeners to language toggle buttons
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            if (lang && lang !== currentLang) {
+                applyLanguage(lang);
+            }
+        });
+    });
+
+    // Initial language application on DOM load
+    applyLanguage(currentLang);
 });

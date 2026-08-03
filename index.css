@@ -104,6 +104,12 @@ img {
     filter: drop-shadow(0 0 10px var(--primary));
 }
 
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .nav-menu ul {
     list-style: none;
     display: flex;
@@ -122,6 +128,49 @@ img {
 .nav-menu a.active {
     color: var(--primary);
     text-shadow: 0 0 8px var(--primary-glow);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* --- Language Selector --- */
+.lang-switch-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.85rem;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    padding: 2px 4px;
+    transition: var(--transition-smooth);
+}
+
+.lang-btn:hover {
+    color: var(--text-light);
+}
+
+.lang-btn.active {
+    color: var(--primary);
+    font-weight: bold;
+    text-shadow: 0 0 8px var(--primary-glow);
+}
+
+.lang-divider {
+    color: var(--text-muted);
+    opacity: 0.5;
+    font-size: 0.75rem;
 }
 
 .menu-toggle {

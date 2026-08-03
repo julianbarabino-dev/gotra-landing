@@ -126,19 +126,30 @@
     <header class="main-header">
         <div class="header-container">
             <a href="#" class="logo" id="nav-logo"><img src="assets/gotra_logo_blanco_sombra_negra.png" alt="GOTRA" class="nav-logo-img"></a>
-            <button class="menu-toggle" aria-label="Abrir menú" id="btn-menu-toggle">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            
+            <div class="header-actions">
+                <!-- Selector de Idiomas -->
+                <div class="lang-switch-container">
+                    <button class="lang-btn active" data-lang="es" aria-label="Cambiar idioma a Español">ES</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="en" aria-label="Switch language to English">EN</button>
+                </div>
+
+                <button class="menu-toggle" aria-label="Abrir menú" id="btn-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
             <nav class="nav-menu" id="main-nav">
                 <!-- Marca de agua de fondo (Monje) para el menú móvil -->
                 <div class="menu-monk-bg"></div>
 
                 <ul>
-                    <li><a href="#inicio" id="link-inicio">Home</a></li>
-                    <li><a href="#single" id="link-single">Music</a></li>
-                    <li><a href="#concepto" id="link-concepto">Concept</a></li>
-                    <li><a href="#prensa" id="link-prensa">Press</a></li>
-                    <li><a href="#contacto" id="link-contacto">Contact</a></li>
+                    <li><a href="#inicio" id="link-inicio" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#single" id="link-single" data-i18n="nav.music">Music</a></li>
+                    <li><a href="#concepto" id="link-concepto" data-i18n="nav.concept">Concept</a></li>
+                    <li><a href="#prensa" id="link-prensa" data-i18n="nav.press">Press</a></li>
+                    <li><a href="#contacto" id="link-contacto" data-i18n="nav.contact">Contact</a></li>
                 </ul>
 
                 <!-- Instagram movido afuera del footer -->
@@ -148,7 +159,7 @@
                 </div>
 
                 <div class="mobile-nav-footer">
-                    <p class="mob-footer-line">Ciudad Autónoma de Buenos Aires · 2026</p>
+                    <p class="mob-footer-line" data-i18n="footer.location">Ciudad Autónoma de Buenos Aires · 2026</p>
                     <p class="mob-footer-line">A <a href="http://metaflow.com.ar" target="_blank" rel="noopener noreferrer"
                             class="blue-link">METAFLOW</a> PROJECT BY <a href="http://julianbarabino.com.ar"
                             target="_blank" rel="noopener noreferrer" class="blue-link">JULIAN BARABINO</a></p>
@@ -164,10 +175,10 @@
         <section id="inicio" class="hero-section" style="background-image: url('assets/img_5976_byn.jpg');">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <span class="hero-subtitle fade-in">Doom Metal Experimental / Occult Rock</span>
+                <span class="hero-subtitle fade-in" data-i18n="hero.subtitle">Doom Metal Experimental / Occult Rock</span>
                 <h1 class="hero-title-logo fade-in" id="main-title">
                     <span class="sr-only">GOTRA - Doom Metal Experimental &amp; Rock Psicodélico</span>
-                    <img src="assets/gotra_logo_blanco_sombra_negra.png" alt="GOTRA - Metal Psicodélico & Doom" class="hero-logo-img">
+                    <img src="assets/gotra_logo_blanco_sombra_negra.png" alt="GOTRA - Metal Psicodélico & Doom" class="hero-logo-img" data-i18n-alt="hero.logoAlt">
                 </h1>
 
             </div>
@@ -195,10 +206,10 @@
                     </div>
 
                     <div class="grid-text-column">
-                        <h2 class="section-title text-left">Muerto Al Fin</h2>
-                        <p class="section-subtitle">Single Debut | Ya Disponible</p>
+                        <h2 class="section-title text-left" data-i18n="single.title">Muerto Al Fin</h2>
+                        <p class="section-subtitle" data-i18n="single.subtitle">Single Debut | Ya Disponible</p>
 
-                        <p class="typewriter-text text-description">
+                        <p class="typewriter-text text-description" data-i18n-html="single.desc">
                             La primera gema sónica de GOTRA. Un riff espeso afinado en C# asentado sobre bases pesadas,
                             en colaboración con <strong>Javier Rubio</strong> (Malón) en baterías y <strong>Juan
                                 Sebastián Rey</strong> en arreglos de teclado.
@@ -211,17 +222,17 @@
 
                         <!-- Streaming Platform Links -->
                         <div class="streaming-platforms">
-                            <a href="https://open.spotify.com/intl-es/track/2UCOZDUgg4SRNSMDpCtQ9O?si=fb5a109384c24230" target="_blank" rel="noopener noreferrer" class="platform-link spotify" aria-label="Escuchar en Spotify">
-                                <i class="fa-brands fa-spotify"></i> Spotify
+                            <a href="https://open.spotify.com/intl-es/track/2UCOZDUgg4SRNSMDpCtQ9O?si=fb5a109384c24230" target="_blank" rel="noopener noreferrer" class="platform-link spotify" aria-label="Escuchar en Spotify" data-i18n-aria="single.spotifyAria">
+                                <i class="fa-brands fa-spotify"></i> <span data-i18n="single.listenSpotify">Spotify</span>
                             </a>
-                            <a href="https://music.youtube.com/watch?v=FOZX-vjR3Bw&si=p5SGib8PUA7EEjrf" target="_blank" rel="noopener noreferrer" class="platform-link youtube" aria-label="Escuchar en YouTube">
-                                <i class="fa-brands fa-youtube"></i> YouTube
+                            <a href="https://music.youtube.com/watch?v=FOZX-vjR3Bw&si=p5SGib8PUA7EEjrf" target="_blank" rel="noopener noreferrer" class="platform-link youtube" aria-label="Escuchar en YouTube" data-i18n-aria="single.youtubeAria">
+                                <i class="fa-brands fa-youtube"></i> <span data-i18n="single.listenYoutube">YouTube</span>
                             </a>
                         </div>
 
                         <!-- CTA: Botón de Instagram de bajo perfil -->
                         <a href="https://instagram.com/gotra.music" target="_blank" rel="noopener noreferrer" class="btn btn-instagram" id="btn-instagram-follow">
-                            <i class="fa-solid fa-circle-plus"></i> Seguir en Instagram
+                            <i class="fa-solid fa-circle-plus"></i> <span data-i18n="single.followInstagram">Seguir en Instagram</span>
                         </a>
                     </div>
                 </div>
@@ -252,18 +263,18 @@
                     </div>
 
                     <div class="grid-text-column">
-                        <h2 class="section-title text-left">El Bardo & La Barca</h2>
-                        <p class="section-subtitle">Bardo Thodol & Böcklin</p>
+                        <h2 class="section-title text-left" data-i18n="concept.title">El Bardo & La Barca</h2>
+                        <p class="section-subtitle" data-i18n="concept.subtitle">Bardo Thodol & Böcklin</p>
 
-                        <p class="typewriter-text text-description">
+                        <p class="typewriter-text text-description" data-i18n-html="concept.desc">
                             «Muerto al Fin» es, ante todo, un pasaje sónico para dejarse llevar. La música conduce un tránsito inspirado en las lecturas del Libro Tibetano de los Muertos y la pintura <em>La Isla de los Muertos</em> de Arnold Böcklin. A través de la imagen de un cuerpo transportado en una barca, la canción explora la disolución del yo y la impermanencia de todo lo que nos rodea.
                         </p>
 
                         <div class="artist-quote">
-                            <blockquote>
+                            <blockquote data-i18n="concept.quote">
                                 "Creo que al final, lo que más me inspiró es la idea de la reencarnación como una reflexión sobre el presente personal y la impermanencia: el hecho de que mañana puede acabarse todo tranquilamente y que el olvido no está mucho más lejos de ahí."
                             </blockquote>
-                            <cite>— Jules</cite>
+                            <cite data-i18n="concept.author">— Jules</cite>
                         </div>
                     </div>
                 </div>
@@ -281,12 +292,12 @@
         <section id="prensa" class="section press-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Prensa</h2>
-                    <p class="section-subtitle">Reseñas & Cobertura de Medios</p>
+                    <h2 class="section-title" data-i18n="press.title">Prensa</h2>
+                    <p class="section-subtitle" data-i18n="press.subtitle">Reseñas & Cobertura de Medios</p>
                 </div>
 
                 <div class="press-carousel-wrapper">
-                    <button class="carousel-control prev" id="btn-press-prev" aria-label="Anterior">
+                    <button class="carousel-control prev" id="btn-press-prev" aria-label="Anterior" data-i18n-aria="press.prevAria">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
                     
@@ -295,7 +306,7 @@
                         <div class="press-card snap-item active">
                             <div class="press-card-image">
                                 <img src="assets/gotra_logo_1200x675.png" alt="Nota Hagamos Ruido Somos Rock" loading="lazy" width="1200" height="675">
-                                <span class="press-card-tag">Noticias</span>
+                                <span class="press-card-tag" data-i18n="press.tagNews">Noticias</span>
                             </div>
                             <div class="press-card-content">
                                 <div class="press-card-meta">
@@ -303,9 +314,9 @@
                                     <span><i class="fa-solid fa-location-dot"></i> Bs. As., ARG</span>
                                 </div>
                                 <h3 class="press-card-title">Hagamos Ruido, <span class="title-accent">Somos Rock</span></h3>
-                                <p class="press-card-desc">«Gotra: Metal Psicodélico con "Muerto al Fin" ft. Javier Rubio. El nuevo proyecto de Julián Barabino fusiona doom, esoterismo y rock de los 70.»</p>
+                                <p class="press-card-desc" data-i18n="press.card1Desc">«Gotra: Metal Psicodélico con "Muerto al Fin" ft. Javier Rubio. El nuevo proyecto de Julián Barabino fusiona doom, esoterismo y rock de los 70.»</p>
                                 <a href="https://hagamosruidosomosrock.com/2026/08/02/gotra-metal-psicodelico-con-muerto-al-fin-ft-javier-rubio/" target="_blank" rel="noopener noreferrer" class="btn-press">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Leer Artículo
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="press.readArticle">Leer Artículo</span>
                                 </a>
                             </div>
                         </div>
@@ -314,7 +325,7 @@
                         <div class="press-card snap-item">
                             <div class="press-card-image">
                                 <img src="assets/img_6002.jpg" alt="Nota Revista Buff" loading="lazy" width="600" height="400">
-                                <span class="press-card-tag">Noticias</span>
+                                <span class="press-card-tag" data-i18n="press.tagNews">Noticias</span>
                             </div>
                             <div class="press-card-content">
                                 <div class="press-card-meta">
@@ -322,9 +333,9 @@
                                     <span><i class="fa-solid fa-location-dot"></i> Bs. As., ARG</span>
                                 </div>
                                 <h3 class="press-card-title">Revista <span class="title-accent">Buff</span></h3>
-                                <p class="press-card-desc">«GOTRA debuta con "Muerto Al Fin", la nueva apuesta pesada de Julián Barabino.»</p>
+                                <p class="press-card-desc" data-i18n="press.card2Desc">«GOTRA debuta con "Muerto Al Fin", la nueva apuesta pesada de Julián Barabino.»</p>
                                 <a href="https://revistabuff.blogspot.com/2026/08/gotra-debuta-con-muerto-al-fin-la-nueva.html" target="_blank" rel="noopener noreferrer" class="btn-press">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Leer Artículo
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="press.readArticle">Leer Artículo</span>
                                 </a>
                             </div>
                         </div>
@@ -333,7 +344,7 @@
                         <div class="press-card snap-item">
                             <div class="press-card-image">
                                 <img src="assets/img_5992.jpg" alt="Nota Darkness News" loading="lazy" width="600" height="400">
-                                <span class="press-card-tag">Noticias</span>
+                                <span class="press-card-tag" data-i18n="press.tagNews">Noticias</span>
                             </div>
                             <div class="press-card-content">
                                 <div class="press-card-meta">
@@ -341,9 +352,9 @@
                                     <span><i class="fa-solid fa-location-dot"></i> Bs. As., ARG</span>
                                 </div>
                                 <h3 class="press-card-title">Darkness <span class="title-accent">News</span></h3>
-                                <p class="press-card-desc">«Gotra presenta el single debut «Muerto al Fin» en colaboración con Javier Rubio (Malón).»</p>
+                                <p class="press-card-desc" data-i18n="press.card3Desc">«Gotra presenta el single debut «Muerto al Fin» en colaboración con Javier Rubio (Malón).»</p>
                                 <a href="https://darknessnews.com/gotra-single-debut-muerto-al-fin/" target="_blank" rel="noopener noreferrer" class="btn-press">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Leer Artículo
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="press.readArticle">Leer Artículo</span>
                                 </a>
                             </div>
                         </div>
@@ -352,7 +363,7 @@
                         <div class="press-card snap-item">
                             <div class="press-card-image">
                                 <img src="assets/img_5976_byn.jpg" alt="Nota Delta 80" loading="lazy" width="600" height="400">
-                                <span class="press-card-tag">Reseña</span>
+                                <span class="press-card-tag" data-i18n="press.tagReview">Reseña</span>
                             </div>
                             <div class="press-card-content">
                                 <div class="press-card-meta">
@@ -360,9 +371,9 @@
                                     <span><i class="fa-solid fa-location-dot"></i> Bs. As., ARG</span>
                                 </div>
                                 <h3 class="press-card-title">Delta <span class="title-accent">80</span></h3>
-                                <p class="press-card-desc">«Gotra: doom, psicodelia y esoterismo para atravesar la muerte y volver a despertar. Un nuevo proyecto que cruza la densidad del doom con la psicodelia de los años 70.»</p>
+                                <p class="press-card-desc" data-i18n="press.card4Desc">«Gotra: doom, psicodelia y esoterismo para atravesar la muerte y volver a despertar. Un nuevo proyecto que cruza la densidad del doom con la psicodelia de los años 70.»</p>
                                 <a href="https://www.delta80.com.ar/gotra-doom-psicodelia-y-esoterismo-para-atravesar-la-muerte-y-volver-a-despertar/" target="_blank" rel="noopener noreferrer" class="btn-press">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Leer Artículo
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="press.readArticle">Leer Artículo</span>
                                 </a>
                             </div>
                         </div>
@@ -371,7 +382,7 @@
                         <div class="press-card snap-item">
                             <div class="press-card-image">
                                 <img src="assets/img_6014.jpg" alt="Nota Metal Argentum Radio" loading="lazy" width="600" height="400">
-                                <span class="press-card-tag">Noticias</span>
+                                <span class="press-card-tag" data-i18n="press.tagNews">Noticias</span>
                             </div>
                             <div class="press-card-content">
                                 <div class="press-card-meta">
@@ -379,15 +390,15 @@
                                     <span><i class="fa-solid fa-location-dot"></i> Bs. As., ARG</span>
                                 </div>
                                 <h3 class="press-card-title">Metal <span class="title-accent">Argentum</span></h3>
-                                <p class="press-card-desc">«Julián Barabino oficializó GOTRA, su nueva propuesta que fusiona la densidad del doom, el rock psicodélico de los setenta y una fuerte impronta esotérica.»</p>
+                                <p class="press-card-desc" data-i18n="press.card5Desc">«Julián Barabino oficializó GOTRA, su nueva propuesta que fusiona la densidad del doom, el rock psicodélico de los setenta y una fuerte impronta esotérica.»</p>
                                 <a href="https://www.metalargentumradio.com.ar/noticias/julian-barabino-presenta-gotra-nuevo-proyecto/" target="_blank" rel="noopener noreferrer" class="btn-press">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Leer Artículo
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="press.readArticle">Leer Artículo</span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <button class="carousel-control next" id="btn-press-next" aria-label="Siguiente">
+                    <button class="carousel-control next" id="btn-press-next" aria-label="Siguiente" data-i18n-aria="press.nextAria">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
@@ -411,89 +422,17 @@
             <div class="diamond-line"></div>
         </div>
 
-        <!-- EPK Downloads Section (Oculta temporalmente para reorganizar después) -->
-        <section id="epk-descargas" class="section press-section hidden">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Prensa / Descargas</h2>
-                    <p class="section-subtitle">Material de Difusión & EPK Oficial</p>
-                </div>
-
-                <div class="press-grid">
-                    <!-- Ficha 1: Gacetilla -->
-                    <div class="press-card">
-                        <div class="press-card-image">
-                            <img src="assets/artwork.jpg" alt="Muerto Al Fin - Portada" loading="lazy" width="600" height="600">
-                            <span class="press-card-tag">Gacetilla</span>
-                        </div>
-                        <div class="press-card-content">
-                            <h3 class="press-card-title">Gacetilla de Prensa</h3>
-                            <p class="press-card-desc">Información oficial sobre el lanzamiento del single debut «Muerto Al Fin», créditos de producción y biografía del proyecto.</p>
-                            <a href="assets/press/GACETILLA_GOTRA.docx" class="btn-press" download>
-                                <i class="fa-solid fa-download"></i> Descargar DOCX
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Ficha 2: Fotos Oficiales -->
-                    <div class="press-card">
-                        <div class="press-card-image">
-                            <img src="assets/img_6014.jpg" alt="GOTRA Fotos de Prensa" loading="lazy" width="600" height="400">
-                            <span class="press-card-tag">Imágenes</span>
-                        </div>
-                        <div class="press-card-content">
-                            <h3 class="press-card-title">Fotos Oficiales</h3>
-                            <p class="press-card-desc">Retratos de banda y material fotográfico oficial en alta resolución comprimidos en formato ZIP para difusión en medios.</p>
-                            <a href="assets/press/GOTRA_Fotos_Prensa.zip" class="btn-press" download>
-                                <i class="fa-solid fa-file-zipper"></i> Descargar ZIP (15MB)
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Ficha 3: Dossier / Info -->
-                    <div class="press-card">
-                        <div class="press-card-image">
-                            <img src="assets/img_5976_byn.jpg" alt="GOTRA Información" loading="lazy" width="600" height="400">
-                            <span class="press-card-tag">Dossier</span>
-                        </div>
-                        <div class="press-card-content">
-                            <h3 class="press-card-title">Dossier / Bio</h3>
-                            <p class="press-card-desc">Ficha descriptiva completa en formato PDF con la biografía, el concepto artístico, géneros y links de contacto oficiales.</p>
-                            <a href="assets/press/GOTRA_Info_1.pdf" class="btn-press" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-solid fa-file-pdf"></i> Ver PDF
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Ficha 4: Kit de Logos -->
-                    <div class="press-card">
-                        <div class="press-card-image logo-preview-container">
-                            <img src="assets/logo.png" alt="GOTRA Logos" class="logo-preview" loading="lazy" width="300" height="100">
-                            <span class="press-card-tag">Gráfica</span>
-                        </div>
-                        <div class="press-card-content">
-                            <h3 class="press-card-title">Logos Oficiales</h3>
-                            <p class="press-card-desc">Logotipos e isotipos oficiales de GOTRA en alta resolución con fondo transparente en formato PNG.</p>
-                            <a href="assets/press/gotra_logo_transparente.png" class="btn-press" download>
-                                <i class="fa-solid fa-download"></i> Descargar PNG
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Contact & Press Section -->
         <section id="contacto" class="section contact-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Contacto</h2>
-                    <p class="section-subtitle">Contacto & Prensa</p>
+                    <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
+                    <p class="section-subtitle" data-i18n="contact.subtitle">Contacto & Prensa</p>
                 </div>
 
                 <div class="contact-box-grid">
                     <div class="contact-details-box">
-                        <p class="typewriter-text">
+                        <p class="typewriter-text" data-i18n="contact.intro">
                             Para ponerte en contacto, completá el siguiente formulario. También podés hacerlo
                             directamente a través de los canales de comunicación abajo:
                         </p>
@@ -517,20 +456,20 @@
                         <form id="contact-form" action="https://formspree.io/f/maqrlpnq" method="POST">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="form-name">Nombre</label>
-                                    <input type="text" id="form-name" name="nombre" required placeholder="Tu nombre">
+                                    <label for="form-name" data-i18n="contact.nameLabel">Nombre</label>
+                                    <input type="text" id="form-name" name="nombre" required placeholder="Tu nombre" data-i18n-placeholder="contact.namePlaceholder">
                                 </div>
                                 <div class="form-group">
-                                    <label for="form-email">Email</label>
-                                    <input type="email" id="form-email" name="email" required placeholder="Tu email">
+                                    <label for="form-email" data-i18n="contact.emailLabel">Email</label>
+                                    <input type="email" id="form-email" name="email" required placeholder="Tu email" data-i18n-placeholder="contact.emailPlaceholder">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="form-message">Mensaje</label>
+                                <label for="form-message" data-i18n="contact.messageLabel">Mensaje</label>
                                 <textarea id="form-message" name="mensaje" rows="4" required
-                                    placeholder="Escribe tu consulta..."></textarea>
+                                    placeholder="Escribe tu consulta..." data-i18n-placeholder="contact.messagePlaceholder"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" id="btn-submit-contact">Enviar
+                            <button type="submit" class="btn btn-primary" id="btn-submit-contact" data-i18n="contact.submitBtn">Enviar
                                 Mensaje</button>
                         </form>
                     </div>
@@ -549,16 +488,17 @@
             <img src="assets/cvr_logo.png" alt="Cosmic Vicar Records" class="label-logo-img" loading="lazy" width="200" height="80">
         </div>
         <div class="container footer-content">
-            <span class="footer-left">Ciudad Autónoma de Buenos Aires · 2026</span>
+            <span class="footer-left" data-i18n="footer.location">Ciudad Autónoma de Buenos Aires · 2026</span>
             <span class="footer-center">
                 A <a href="http://metaflow.com.ar" target="_blank" rel="noopener noreferrer" class="blue-link">METAFLOW</a> PROJECT BY <a
                     href="http://julianbarabino.com.ar" target="_blank" rel="noopener noreferrer" class="blue-link">JULIAN BARABINO</a>
             </span>
-            <span class="footer-right">© 2026 Todos los derechos reservados.</span>
+            <span class="footer-right" data-i18n="footer.rights">© 2026 Todos los derechos reservados.</span>
         </div>
     </footer>
 
     <!-- Custom JS -->
+    <script src="translations.js"></script>
     <script src="app.js"></script>
 </body>
 
