@@ -332,12 +332,22 @@ img {
     padding: 70px 20px 30px;
     position: relative;
     background-color: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     text-align: center;
 }
 
 .hero-quote-container {
     max-width: 820px;
+    width: 100%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .hero-quote-text {
@@ -349,6 +359,8 @@ img {
     letter-spacing: 1px;
     margin-bottom: 20px;
     opacity: 0.92;
+    text-align: center;
+    width: 100%;
 }
 
 .hero-quote-author {
@@ -360,6 +372,7 @@ img {
     font-style: normal;
     display: block;
     text-shadow: 0 0 8px var(--primary-glow);
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -1080,15 +1093,21 @@ img {
 }
 
 /* Solo los logos tienen color por defecto (para móvil y responsive) */
-.platform-link.spotify i {
+.platform-link.spotify i,
+.platform-link.spotify svg,
+.platform-link.spotify i::before {
     color: #1DB954 !important;
 }
 
-.platform-link.youtube i {
+.platform-link.youtube i,
+.platform-link.youtube svg,
+.platform-link.youtube i::before {
     color: #FF0000 !important;
 }
 
-.platform-link.instagram i {
+.platform-link.instagram i,
+.platform-link.instagram svg,
+.platform-link.instagram i::before {
     color: #E1306C !important;
 }
 
@@ -1101,19 +1120,16 @@ img {
     .platform-link.spotify:hover {
         border-color: #1DB954;
         box-shadow: 0 0 12px rgba(29, 185, 84, 0.25);
-        color: #1DB954;
     }
     
     .platform-link.youtube:hover {
         border-color: #FF0000;
         box-shadow: 0 0 12px rgba(255, 0, 0, 0.25);
-        color: #FF0000;
     }
 
     .platform-link.instagram:hover {
         border-color: #E1306C;
         box-shadow: 0 0 12px rgba(225, 48, 108, 0.25);
-        color: #E1306C;
     }
 }
 
