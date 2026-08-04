@@ -11,6 +11,10 @@ const translations = {
             subtitle: "Doom Metal Experimental / Occult Rock",
             logoAlt: "GOTRA - Metal Psicodélico & Doom"
         },
+        quoteBanner: {
+            text: "«Hay músicas que buscan escapar del ruido del mundo y otras que prefieren internarse en él hasta encontrar algo al otro lado.»",
+            source: "Delta80"
+        },
         single: {
             title: "Muerto Al Fin",
             subtitle: "Single Debut | Ya Disponible",
@@ -97,6 +101,10 @@ const translations = {
         hero: {
             subtitle: "Experimental Doom Metal / Occult Rock",
             logoAlt: "GOTRA - Psychedelic Metal & Doom"
+        },
+        quoteBanner: {
+            text: "“There are types of music that seek to escape the world's noise, and others that prefer to venture into it until finding something on the other side.”",
+            source: "Delta80"
         },
         single: {
             title: "Muerto Al Fin",
