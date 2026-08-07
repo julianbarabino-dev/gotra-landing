@@ -1093,6 +1093,12 @@ img {
 }
 
 /* Solo los logos tienen color por defecto (para móvil y responsive) */
+.platform-link.bandcamp i,
+.platform-link.bandcamp svg,
+.platform-link.bandcamp i::before {
+    color: #1da0c3 !important;
+}
+
 .platform-link.spotify i,
 .platform-link.spotify svg,
 .platform-link.spotify i::before {
@@ -1117,6 +1123,11 @@ img {
         background: rgba(255, 255, 255, 0.08);
     }
     
+    .platform-link.bandcamp:hover {
+        border-color: #1da0c3;
+        box-shadow: 0 0 12px rgba(29, 160, 195, 0.35);
+    }
+
     .platform-link.spotify:hover {
         border-color: #1DB954;
         box-shadow: 0 0 12px rgba(29, 185, 84, 0.25);

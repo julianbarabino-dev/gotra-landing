@@ -19,9 +19,11 @@ const translations = {
             title: "Muerto Al Fin",
             subtitle: "Single Debut | Ya Disponible",
             desc: "La primera gema sónica de GOTRA. Un riff espeso afinado en C# asentado sobre bases pesadas, en colaboración con <strong>Javier Rubio</strong> (Malón) en baterías y <strong>Juan Sebastián Rey</strong> en arreglos de teclado.",
+            listenBandcamp: "Bandcamp",
             listenSpotify: "Spotify",
             listenYoutube: "YouTube",
             followInstagram: "Seguir en Instagram",
+            bandcampAria: "Escuchar en Bandcamp",
             spotifyAria: "Escuchar en Spotify",
             youtubeAria: "Escuchar en YouTube"
         },
@@ -110,9 +112,11 @@ const translations = {
             title: "Muerto Al Fin",
             subtitle: "Debut Single | Out Now",
             desc: "GOTRA's first sonic gem. A heavy C# tuned riff built over thick rhythm sections, featuring <strong>Javier Rubio</strong> (Malón) on drums and <strong>Juan Sebastián Rey</strong> on keyboard arrangements.",
+            listenBandcamp: "Bandcamp",
             listenSpotify: "Spotify",
             listenYoutube: "YouTube",
             followInstagram: "Follow on Instagram",
+            bandcampAria: "Listen on Bandcamp",
             spotifyAria: "Listen on Spotify",
             youtubeAria: "Listen on YouTube"
         },
