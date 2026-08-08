@@ -455,15 +455,18 @@ img {
 }
 
 .diamond-icon {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: var(--primary);
     margin: 0 25px;
     text-shadow: 0 0 10px var(--primary-glow);
-    animation: rotateSlow 8s infinite linear;
+    transition: text-shadow 0.3s ease;
+    display: inline-block;
+    line-height: 1;
+    will-change: transform;
 }
 
-@keyframes rotateSlow {
-    to { transform: rotate(360deg); }
+.diamond-icon:hover {
+    text-shadow: 0 0 20px var(--primary-glow);
 }
 
 /* --- Grid & Columns Layout --- */

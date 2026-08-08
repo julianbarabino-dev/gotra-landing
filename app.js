@@ -136,12 +136,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Add class fade-in-scroll to items we want to animate on scroll
-    const itemsToAnimate = document.querySelectorAll('.img-frame, .tarot-card, .vintage-manuscript-card, .contact-details-box, .contact-form-box');
+    // Add class fade-in-scroll to items we want to animate on scroll (keeping images static)
+    const itemsToAnimate = document.querySelectorAll('.tarot-card, .vintage-manuscript-card, .contact-details-box, .contact-form-box');
     itemsToAnimate.forEach(item => {
         item.style.opacity = '0';
-        item.style.transform = 'translateY(30px)';
-        item.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         revealObserver.observe(item);
     });
 
@@ -396,4 +396,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial language application on DOM load
     applyLanguage(currentLang);
+
+    // --- Dynamic Scroll Rotation for Diamond / Alchemical Icons ---
+    const diamondIcons = document.querySelectorAll('.diamond-icon');
+    if (diamondIcons.length > 0) {
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrollY = window.scrollY;
+                    const rotationDeg = (scrollY * 0.25) % 360;
+                    diamondIcons.forEach(icon => {
+                        icon.style.transform = `rotate(${rotationDeg}deg)`;
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    }
 });
