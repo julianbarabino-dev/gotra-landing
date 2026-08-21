@@ -8,7 +8,7 @@ const translations = {
             contact: "Contacto"
         },
         hero: {
-            subtitle: "Doom Metal Experimental / Occult Rock",
+            subtitle: "<span>Doom Metal Experimental</span><span>Occult Rock</span>",
             logoAlt: "GOTRA - Metal Psicodélico & Doom"
         },
         quoteBanner: {
@@ -110,7 +110,7 @@ const translations = {
             contact: "Contact"
         },
         hero: {
-            subtitle: "Experimental Doom Metal / Occult Rock",
+            subtitle: "<span>Experimental Doom Metal</span><span>Occult Rock</span>",
             logoAlt: "GOTRA - Psychedelic Metal & Doom"
         },
         quoteBanner: {
