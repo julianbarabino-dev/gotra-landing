@@ -1379,6 +1379,40 @@ img {
     z-index: 2;
 }
 
+.press-card-video-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    background: rgba(20, 5, 10, 0.88);
+    border: 1px solid rgba(239, 68, 68, 0.6);
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #ff6b6b;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 8px rgba(239, 68, 68, 0.25);
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+.press-card:hover .press-card-video-tag {
+    border-color: rgba(239, 68, 68, 0.9);
+    color: #ff8888;
+    box-shadow: 0 2px 12px rgba(239, 68, 68, 0.4);
+}
+
+.press-card-video-tag i {
+    font-size: 0.7rem;
+    color: #ff3333;
+}
+
 .press-card-content {
     padding: 22px;
     display: flex;
