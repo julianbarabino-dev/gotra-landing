@@ -104,7 +104,7 @@ function initPreventaData() {
  * 2. Botones para Copiar al Portapapeles (Alias y CBU)
  */
 function initCopyButtons() {
-    const copyButtons = document.querySelectorAll('.btn-copy');
+    const copyButtons = document.querySelectorAll('.btn-copy-tile, .btn-copy');
     copyButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -116,17 +116,16 @@ function initCopyButtons() {
             copyToClipboard(textToCopy);
 
             // Feedback visual en el botón
-            const originalText = btn.querySelector('.copy-text').textContent;
-            btn.querySelector('.copy-text').textContent = "Copiado";
-            btn.style.background = "var(--primary)";
-            btn.style.color = "#ffffff";
+            btn.classList.add('is-copied');
+            const textSpan = btn.querySelector('.copy-text');
+            const originalText = textSpan ? textSpan.textContent : "Copiar";
+            if (textSpan) textSpan.textContent = "¡Copiado!";
 
-            showToast(`${targetId === 'bank-alias' ? 'Alias' : 'CBU'} copiado al portapapeles`);
+            showToast(`${targetId === 'bank-alias' ? 'Alias' : 'CVU'} copiado al portapapeles`);
 
             setTimeout(() => {
-                btn.querySelector('.copy-text').textContent = originalText;
-                btn.style.background = "";
-                btn.style.color = "";
+                btn.classList.remove('is-copied');
+                if (textSpan) textSpan.textContent = originalText;
             }, 2500);
         });
     });
@@ -188,17 +187,17 @@ function recalcTotal() {
 
     const totalToPayEl = document.getElementById('total-to-pay');
     if (totalToPayEl) {
-        totalToPayEl.textContent = formatCurrency(total);
+        totalToPayEl.textContent = `$${total.toLocaleString('es-AR')}`;
     }
 
-    // Actualizar labels de cantidad para mostrar el total respectivo
+    // Actualizar labels de cantidad de forma limpia y legible
     const qty1Box = document.getElementById('qty-1-label');
     const qty2Box = document.getElementById('qty-2-label');
     if (qty1Box) {
-        qty1Box.textContent = `1 Copia (${formatCurrency(variant.precio)})`;
+        qty1Box.textContent = `1 Copia ($${variant.precio.toLocaleString('es-AR')})`;
     }
     if (qty2Box) {
-        qty2Box.innerHTML = `2 Copias (${formatCurrency(variant.precio * 2)}) <small>(Máx)</small>`;
+        qty2Box.textContent = `2 Copias ($${(variant.precio * 2).toLocaleString('es-AR')})`;
     }
 }
 
