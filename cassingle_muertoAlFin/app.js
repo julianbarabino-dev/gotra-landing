@@ -28,8 +28,8 @@ const PREVENTA_CONFIG = {
     },
     
     // Datos Bancarios
-    alias: "GOTRA.DOOM.MP",
-    cbu: "0000003100098765432100",
+    alias: "gotra.cassingle",
+    cbu: "0000076500000000969792",
     titular: "Gotra (Cuenta Oficial)",
     
     // WhatsApp Oficial de la Banda (Código de país + área + número sin + ni guiones)
