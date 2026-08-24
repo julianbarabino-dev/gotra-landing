@@ -27,7 +27,4 @@ node_modules/
 dist/
 build/
 *.log
-
-# Preventa Cassette (Pausada localmente hasta lanzamiento oficial)
-cassette/
-
+# Preventa Cassingle activa y pública
