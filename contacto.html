@@ -61,40 +61,20 @@
     <link rel="stylesheet" href="index.css?v=15">
     <style>
         .contact-page-main {
-            padding-top: 130px;
+            padding-top: 135px;
             padding-bottom: 90px;
             min-height: 80vh;
         }
 
-        .btn-back-nav {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-body);
-            font-size: 0.85rem;
-            color: var(--text-main);
-            padding: 6px 14px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
-            transition: var(--transition-smooth);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-back-nav:hover {
-            border-color: var(--primary);
-            color: #528aff;
-            box-shadow: 0 0 12px var(--primary-glow);
-            transform: translateX(-3px);
-        }
-
         .contact-breadcrumbs {
             display: flex;
+            justify-content: center;
             align-items: center;
+            text-align: center;
             gap: 8px;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
-            margin-bottom: 30px;
+            margin-bottom: 24px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-family: var(--font-body);
@@ -102,26 +82,63 @@
 
         .contact-breadcrumbs a {
             color: var(--text-muted);
+            transition: var(--transition-smooth);
         }
 
         .contact-breadcrumbs a:hover {
             color: #528aff;
         }
 
+        .contact-breadcrumbs .separator {
+            color: rgba(255, 255, 255, 0.25);
+        }
+
         .contact-breadcrumbs .current {
             color: var(--text-main);
         }
 
+        .contact-hero-media {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            position: relative;
+        }
+
+        .contact-hero-media img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.85);
+            display: block;
+        }
+
+        .nav-menu a.active {
+            color: var(--primary) !important;
+            text-shadow: 0 0 10px var(--primary-glow);
+        }
+
         @media (max-width: 768px) {
             .contact-page-main {
-                padding-top: 100px;
+                padding-top: 110px;
                 padding-bottom: 60px;
+            }
+
+            .contact-breadcrumbs {
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+            }
+
+            .contact-hero-media {
+                margin-bottom: 30px;
             }
 
             .contact-box-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 24px 18px;
+                gap: 35px;
+                padding: 28px 20px;
             }
 
             .form-row {
@@ -132,7 +149,7 @@
     </style>
 </head>
 
-<body>
+<body class="theme-colour-purple">
 
     <!-- Analog Noise Overlay -->
     <div class="analog-noise"></div>
@@ -141,26 +158,58 @@
     <div class="ambient-glow ambient-glow-top"></div>
     <div class="ambient-glow ambient-glow-bottom"></div>
 
-    <!-- Header / Navigation -->
+    <!-- Navigation Header -->
     <header class="main-header">
-        <div class="container header-container">
+        <div class="header-container">
             <a href="index.html" class="logo" id="nav-logo" title="Volver a GOTRA Inicio">
                 <img src="assets/gotra_logo_blanco_sombra_negra.png" alt="GOTRA" class="nav-logo-img">
             </a>
 
             <div class="header-actions">
-                <!-- Selector de Idiomas -->
-                <div class="lang-switch-container">
+                <!-- Selector de Idiomas Desktop -->
+                <div class="lang-switch-container desktop-lang-switch">
                     <button class="lang-btn active" data-lang="es" aria-label="Cambiar idioma a Español">ES</button>
                     <span class="lang-divider">|</span>
                     <button class="lang-btn" data-lang="en" aria-label="Switch language to English">EN</button>
                 </div>
 
-                <a href="index.html" class="btn-back-nav" id="btn-back-home" title="Volver al Inicio">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <span>Volver a Inicio</span>
-                </a>
+                <button class="menu-toggle" aria-label="Abrir menú" id="btn-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
+
+            <nav class="nav-menu" id="main-nav">
+                <!-- Marca de agua de fondo (Monje) para el menú móvil -->
+                <div class="menu-monk-bg"></div>
+
+                <!-- Selector de Idiomas Menú Móvil -->
+                <div class="lang-switch-container mob-lang-switch">
+                    <button class="lang-btn active" data-lang="es" aria-label="Cambiar idioma a Español">ES</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="en" aria-label="Switch language to English">EN</button>
+                </div>
+
+                <ul>
+                    <li><a href="index.html#inicio" id="link-inicio" data-i18n="nav.home">Home</a></li>
+                    <li><a href="index.html#single" id="link-single" data-i18n="nav.music">Music</a></li>
+                    <li><a href="index.html#concepto" id="link-concepto" data-i18n="nav.concept">Concept</a></li>
+                    <li><a href="index.html#prensa" id="link-prensa" data-i18n="nav.press">Press</a></li>
+                    <li><a href="contacto.html" id="link-contacto" class="active" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+
+                <!-- Redes Sociales Menú Móvil -->
+                <div class="mob-socials">
+                    <a href="https://gotramusic.bandcamp.com/track/muerto-al-fin" target="_blank" rel="noopener noreferrer" aria-label="Bandcamp"><i class="fa-brands fa-bandcamp"></i></a>
+                    <a href="https://instagram.com/gotra.music" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+
+                <div class="mobile-nav-footer">
+                    <p class="mob-footer-line" data-i18n="footer.location">Ciudad Autónoma de Buenos Aires · 2026</p>
+                    <p class="mob-footer-line">A <a href="http://metaflow.com.ar" target="_blank" rel="noopener noreferrer"
+                            class="blue-link">METAFLOW</a> PROJECT BY <a href="http://julianbarabino.com.ar"
+                            target="_blank" rel="noopener noreferrer" class="blue-link">JULIAN BARABINO</a></p>
+                </div>
+            </nav>
         </div>
     </header>
 
@@ -179,6 +228,10 @@
                 <h1 class="section-title" data-i18n="contact.title">Contacto</h1>
                 <p class="section-subtitle" data-i18n="contact.subtitle">Contacto & Prensa</p>
             </div>
+
+            <figure class="contact-hero-media">
+                <img src="assets/gotra_guardianes_ciegos.webp" alt="GOTRA - Contacto & Prensa" width="1200" height="674" loading="eager">
+            </figure>
 
             <div class="contact-box-grid">
                 <div class="contact-details-box">

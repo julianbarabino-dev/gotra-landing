@@ -145,6 +145,10 @@ img {
     font-size: 0.85rem;
 }
 
+.mob-lang-switch {
+    display: none;
+}
+
 .lang-btn {
     background: transparent;
     border: none;
@@ -827,6 +831,10 @@ img {
     .menu-toggle {
         display: block;
     }
+
+    .desktop-lang-switch {
+        display: none !important;
+    }
     
     .nav-menu {
         position: fixed;
@@ -849,6 +857,26 @@ img {
         visibility: visible;
         pointer-events: auto;
         transform: translateY(0);
+    }
+
+    .mob-lang-switch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1.1rem;
+    }
+
+    .mob-lang-switch .lang-btn {
+        font-size: 1.1rem;
+        padding: 6px 12px;
+    }
+
+    .mob-lang-switch .lang-divider {
+        font-size: 1rem;
     }
     
     .nav-menu ul {
