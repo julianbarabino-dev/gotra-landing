@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=1">
+    <title>Contacto & Prensa | GOTRA - Sitio Oficial</title>
+    <meta name="description"
+        content="Contacto oficial y prensa de GOTRA / Cosmic Vicar Records. Canales de comunicación directa, contrataciones, entrevistas y formulario de mensajes.">
+    <link rel="canonical" href="https://gotra.musica.ar/contacto.html">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotra.musica.ar/contacto.html">
+    <meta property="og:title" content="Contacto & Prensa | GOTRA">
+    <meta property="og:description"
+        content="Ponete en contacto con GOTRA y Cosmic Vicar Records para prensa, contrataciones o consultas.">
+    <meta property="og:image" content="https://gotra.musica.ar/assets/instagram_perfil_rojo_amarillo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gotra.musica.ar/contacto.html">
+    <meta property="twitter:title" content="Contacto & Prensa | GOTRA">
+    <meta property="twitter:description"
+        content="Ponete en contacto con GOTRA y Cosmic Vicar Records para prensa, contrataciones o consultas.">
+    <meta property="twitter:image" content="https://gotra.musica.ar/assets/instagram_perfil_rojo_amarillo.png">
+
+    <!-- Google Fonts: Almendra (Gótico/Ocultista) y Special Elite (Typewriter Vintage) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contacto & Prensa - GOTRA",
+      "url": "https://gotra.musica.ar/contacto.html",
+      "description": "Página oficial de contacto y prensa de GOTRA y Cosmic Vicar Records.",
+      "publisher": {
+        "@type": "MusicGroup",
+        "name": "GOTRA",
+        "url": "https://gotra.musica.ar/"
+      }
+    }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css?v=15">
+    <style>
+        .contact-page-main {
+            padding-top: 130px;
+            padding-bottom: 90px;
+            min-height: 80vh;
+        }
+
+        .btn-back-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--text-main);
+            padding: 6px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-back-nav:hover {
+            border-color: var(--primary);
+            color: #528aff;
+            box-shadow: 0 0 12px var(--primary-glow);
+            transform: translateX(-3px);
+        }
+
+        .contact-breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-family: var(--font-body);
+        }
+
+        .contact-breadcrumbs a {
+            color: var(--text-muted);
+        }
+
+        .contact-breadcrumbs a:hover {
+            color: #528aff;
+        }
+
+        .contact-breadcrumbs .current {
+            color: var(--text-main);
+        }
+
+        @media (max-width: 768px) {
+            .contact-page-main {
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+
+            .contact-box-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 24px 18px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Analog Noise Overlay -->
+    <div class="analog-noise"></div>
+
+    <!-- Ambient Subtle Glows -->
+    <div class="ambient-glow ambient-glow-top"></div>
+    <div class="ambient-glow ambient-glow-bottom"></div>
+
+    <!-- Header / Navigation -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" id="nav-logo" title="Volver a GOTRA Inicio">
+                <img src="assets/gotra_logo_blanco_sombra_negra.png" alt="GOTRA" class="nav-logo-img">
+            </a>
+
+            <div class="header-actions">
+                <!-- Selector de Idiomas -->
+                <div class="lang-switch-container">
+                    <button class="lang-btn active" data-lang="es" aria-label="Cambiar idioma a Español">ES</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="en" aria-label="Switch language to English">EN</button>
+                </div>
+
+                <a href="index.html" class="btn-back-nav" id="btn-back-home" title="Volver al Inicio">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Volver a Inicio</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="contact-page-main">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <nav class="contact-breadcrumbs" aria-label="Ruta de navegación">
+                <a href="index.html">GOTRA</a>
+                <span class="separator">/</span>
+                <span class="current">Contacto</span>
+            </nav>
+
+            <div class="section-header">
+                <h1 class="section-title" data-i18n="contact.title">Contacto</h1>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Contacto & Prensa</p>
+            </div>
+
+            <div class="contact-box-grid">
+                <div class="contact-details-box">
+                    <p class="typewriter-text" data-i18n="contact.intro">
+                        Para ponerte en contacto, completá el siguiente formulario. También podés hacerlo
+                        directamente a través de los canales de comunicación abajo:
+                    </p>
+                    <ul class="contact-methods">
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:cosmicvicarrecords@gmail.com">cosmicvicarrecords@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <a href="https://wa.me/5492966654899" target="_blank" rel="noopener noreferrer">+54 9 2966 654899</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-bandcamp"></i>
+                            <a href="https://gotramusic.bandcamp.com/track/muerto-al-fin" target="_blank" rel="noopener noreferrer">gotramusic.bandcamp.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-instagram"></i>
+                            <a href="https://instagram.com/gotra.music" target="_blank" rel="noopener noreferrer">@gotra.music</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contact-form-box">
+                    <form id="contact-form" action="https://formspree.io/f/maqrlpnq" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name" data-i18n="contact.nameLabel">Nombre</label>
+                                <input type="text" id="form-name" name="nombre" required placeholder="Tu nombre" data-i18n-placeholder="contact.namePlaceholder">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email" data-i18n="contact.emailLabel">Email</label>
+                                <input type="email" id="form-email" name="email" required placeholder="Tu email" data-i18n-placeholder="contact.emailPlaceholder">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message" data-i18n="contact.messageLabel">Mensaje</label>
+                            <textarea id="form-message" name="mensaje" rows="4" required
+                                placeholder="Escribe tu consulta..." data-i18n-placeholder="contact.messagePlaceholder"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="btn-submit-contact" data-i18n="contact.submitBtn">Enviar
+                            Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <!-- Marca de agua de fondo (Monje) -->
+        <div class="footer-monk-bg"></div>
+
+        <div class="container label-logo-container">
+            <img src="assets/cvr_logo.png" alt="Cosmic Vicar Records" class="label-logo-img" loading="lazy" width="200" height="80">
+        </div>
+        <div class="container footer-content">
+            <span class="footer-left" data-i18n="footer.location">Ciudad Autónoma de Buenos Aires · 2026</span>
+            <span class="footer-center">
+                A <a href="http://metaflow.com.ar" target="_blank" rel="noopener noreferrer" class="blue-link">METAFLOW</a> PROJECT BY <a
+                    href="http://julianbarabino.com.ar" target="_blank" rel="noopener noreferrer" class="blue-link">JULIAN BARABINO</a>
+            </span>
+            <span class="footer-right" data-i18n="footer.rights">© 2026 Todos los derechos reservados.</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="translations.js?v=15"></script>
+    <script src="app.js?v=15"></script>
+</body>
+
+</html>
