@@ -1384,52 +1384,28 @@ img {
     opacity: 0.85;
 }
 
-.press-card-tags {
-    position: absolute;
-    top: 12px;
-    right: 12px;
+.press-card-hashtags {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 6px;
-    z-index: 5;
-}
-
-.press-card-tag {
-    font-family: var(--font-body);
-    font-size: 0.6rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    background: rgba(12, 10, 18, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 3px 8px;
-    border-radius: 4px;
-    color: #d4d4d8;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(6px);
-    display: inline-flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 5px;
-    transition: var(--transition);
+    gap: 8px;
+    margin-bottom: 6px;
 }
 
-.press-card-tag i {
-    font-size: 0.65rem;
-    color: #a1a1aa;
+.press-hashtag {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #528aff;
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
+    transition: var(--transition-smooth);
 }
 
-.press-card:hover .press-card-tag,
-.press-card.active .press-card-tag {
-    background: rgba(22, 18, 30, 0.85);
-    border-color: rgba(255, 255, 255, 0.32);
-    color: #ffffff;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
-}
-
-.press-card:hover .press-card-tag i,
-.press-card.active .press-card-tag i {
-    color: #e4e4e7;
+.press-card:hover .press-hashtag,
+.press-card.active .press-hashtag {
+    color: #8bb3ff;
+    text-shadow: 0 0 8px rgba(0, 85, 255, 0.4);
 }
 
 .press-card-content {
