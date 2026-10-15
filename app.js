@@ -140,8 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemsToAnimate = document.querySelectorAll('.tarot-card, .vintage-manuscript-card, .contact-details-box, .contact-form-box');
     itemsToAnimate.forEach(item => {
         item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        item.style.transform = 'translateY(12px)';
+        item.style.transition = 'opacity 0.32s cubic-bezier(0.23, 1, 0.32, 1), transform 0.32s cubic-bezier(0.23, 1, 0.32, 1)';
         revealObserver.observe(item);
     });
 
