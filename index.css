@@ -807,11 +807,12 @@ img {
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    flex-wrap: wrap;
-    gap: 15px;
+    gap: 8px;
+    text-align: center;
 }
 
 .blue-link {
