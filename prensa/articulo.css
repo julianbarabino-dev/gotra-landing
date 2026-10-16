@@ -636,6 +636,32 @@ img {
     text-shadow: 0 0 8px var(--primary-glow);
 }
 
+.footer-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.metaflow-logo-link {
+    display: inline-flex;
+    align-items: center;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.metaflow-logo-link:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.metaflow-logo-img {
+    height: 16px;
+    width: auto;
+    display: block;
+}
+
 /* --- Toast notification --- */
 .toast-msg {
     position: fixed;
