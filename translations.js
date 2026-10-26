@@ -95,6 +95,19 @@ const translations = {
             logosDesc: "Logotipos e isotipos oficiales de GOTRA en alta resolución con fondo transparente en formato PNG.",
             logosBtn: "Descargar PNG"
         },
+        pressArchive: {
+            title: "Archivo de Prensa",
+            subtitle: "Entrevistas, Reseñas & Cobertura en Medios",
+            breadcrumbHome: "Inicio",
+            breadcrumbCurrent: "Prensa",
+            filterAll: "Todas",
+            filterInterviews: "Entrevistas",
+            filterMedia: "Radio & Video",
+            filterReviews: "Reseñas & Noticias",
+            homeTeaserBadge: "+20 Coberturas en Medios",
+            viewFullArchive: "Ver Archivo Completo de Prensa",
+            backToTop: "Volver arriba"
+        },
         contact: {
             title: "Contacto",
             subtitle: "Contacto & Prensa",
@@ -207,6 +220,19 @@ const translations = {
             logosTitle: "Official Logos",
             logosDesc: "High resolution official GOTRA logos and marks with transparent background in PNG format.",
             logosBtn: "Download PNG"
+        },
+        pressArchive: {
+            title: "Press Archive",
+            subtitle: "Interviews, Reviews & Media Coverage",
+            breadcrumbHome: "Home",
+            breadcrumbCurrent: "Press",
+            filterAll: "All",
+            filterInterviews: "Interviews",
+            filterMedia: "Radio & Video",
+            filterReviews: "Reviews & News",
+            homeTeaserBadge: "+20 Media Coverages",
+            viewFullArchive: "View Full Press Archive",
+            backToTop: "Back to top"
         },
         contact: {
             title: "Contact",
