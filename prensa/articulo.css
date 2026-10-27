@@ -6,10 +6,10 @@
 
 :root {
     --bg-dark: #000000;
-    --primary: #0055ff; /* Electric/Indigo Blue */
-    --primary-glow: rgba(0, 85, 255, 0.4);
-    --primary-light: #528aff;
-    --primary-subtle: rgba(0, 85, 255, 0.12);
+    --primary: #3d82ff; /* Electric/Indigo Blue with WCAG AA contrast */
+    --primary-glow: rgba(61, 130, 255, 0.25);
+    --primary-light: #6ba6ff;
+    --primary-subtle: rgba(61, 130, 255, 0.12);
     --text-bright: #ffffff;
     --text-main: #cbd5e1; /* Slate-300: High legibility editorial body */
     --text-muted: #808ea0; /* Slate-400/500 */
@@ -633,7 +633,7 @@ img {
 
 .blue-link:hover {
     color: #fff;
-    text-shadow: 0 0 8px var(--primary-glow);
+    text-decoration: underline;
 }
 
 .footer-center {
